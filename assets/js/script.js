@@ -6,13 +6,13 @@ let result = document.getElementById("result");
 
 const getMovie = () => {
   let movieName = movieNameRef.value;
-  let url = `http://www.omdbapi.com/?t=${movieName}&apikey=${myApiKey}`;
+  let apiUrl = `http://www.omdbapi.com/?t=${movieName}&apikey=${myApiKey}`;
 
   //If input field is empty
   if (movieName.length <= 0) {
     result.innerHTML = `<h3 class="msg">Please enter a movie name</h3>`;
   } else {
-    fetch(url)
+    fetch(apiUrl)
       .then(function (response) {
         return response.json();
       })
